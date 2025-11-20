@@ -25,10 +25,23 @@ function createFloatingElements() {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    createFloatingElements();
+    const skillIcons = document.querySelectorAll('.skill-icon');
     
-    // Add any other initialization code here
-    console.log('Portfolio website loaded successfully!');
+    skillIcons.forEach(icon => {
+        // Add mouseenter event
+        icon.addEventListener('mouseenter', function() {
+            console.log('Hover detected on:', this);
+            this.style.border = '3px solid green !important';
+            this.style.background = 'lightgreen !important';
+        });
+        
+        // Add mouseleave event
+        icon.addEventListener('mouseleave', function() {
+            console.log('Hover ended on:', this);
+            this.style.border = '1px solid blue !important';
+            this.style.background = 'white !important';
+        });
+    });
 });
 
 // Utility function for smooth scrolling

@@ -20,7 +20,7 @@ const projects = [
         id: 3,
         title: "Student Management System",
         description: "A Python program that manages student records using CSV files with full CRUD operations. Focused on implementing core functionality and smooth program logic.",
-        image: "./assests/Python_project.png",
+        image: "./assets/Python_project.png",
         technologies: ["Python", "CSV", "File Handling"],
         link: "https://github.com/yuwaddylwin"
     },
@@ -42,23 +42,21 @@ projects.forEach(project => {
     projectCard.className = 'project-card';
     
     projectCard.innerHTML = `
-        <div class="project-image">
-            <img src="${project.image}" alt="${project.title}">
-        </div>
-        <div class="project-content">
-            <h3>${project.title}</h3>
-            <p>${project.description}</p>
-            <div class="project-tech">
-                ${project.technologies.map(tech => `<span>${tech}</span>`).join('')}
+            <div class="project-image">
+                <img src="${project.image}" alt="${project.title}">
+                <div class="project-overlay">
+                    <h3>${project.title}</h3>
+                    <a href="${project.link}" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> GitHub</a>
+                </div>
             </div>
-            <div class="project-links">
-                <a href="${project.link}" target="_blank" class="btn btn-outline">
-                    <i class="fab fa-github"></i> View 
-                </a>
+            <div class="project-content">
+                <p>${project.description}</p>
+                <div class="project-tech">
+                    ${project.technologies.map(tech => `<span>${tech}</span>`).join('')}
+                </div>
             </div>
-        </div>
-    `;
-    
-    projectsGrid.appendChild(projectCard);
-});
+        `;
+        
+        projectsGrid.appendChild(projectCard); // append inside the loop
+    });
 

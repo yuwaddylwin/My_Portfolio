@@ -256,177 +256,227 @@ nav {
     background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(0,0,0,0.05));
 }
 
-/* Hover effect for floating & pop
-.hero-image img:hover {
-    transform: translateY(-5px) rotateX(1deg) rotateY(1deg);
-    box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.25),
-        0 30px 60px rgba(0, 0, 0, 0.2),
-        0 0 40px rgba(37, 99, 235, 0.5); /* stronger glow on hover */
+/* When screen is below 768px — mobile layout */
+@media (max-width: 768px) {
 
+    #home .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
+    .hero-image {
+        position: relative;
+        order: -1; /* pushes image ABOVE hero content */
+        width: 80%;
+        max-width: 300px;
+        margin-bottom: 25px;
+        top: 0;
+        right: 0;
+        transform: none;
+        z-index: 10; /* ensure it's above */
+    }
 
+    .hero-image img {
+        width: 100%;
+        border-radius: 20px;
+    }
 
-/* About Section */
-#about {
-    background: white;
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+        order: 0; /* ensure it stays below */
+    }
+
+    .hero-btns,
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-btns .btn,
+    .hero-buttons .btn {
+        width: 100%;
+    }
 }
 
-.about-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Left + Right */
-  gap: 50px;
-  align-items: flex-start;
-  margin-top: 30px;
-}
+@media (max-width: 1024px) {
 
-.about-left {
-  text-align: left;
-  
-}
+    #home .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
 
-.about-right {
-  text-align: center;
-}
+    .hero-image {
+        position: relative;
+        order: -1;
+        width: 60%;           /* smaller but still large for tablets */
+        max-width: 350px;
+        margin-bottom: 30px;
+        transform: none;
+    }
 
-/* Ensure skills section doesn't shrink too much */
-.skills-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+    .hero-content {
+        text-align: center;
+        max-width: 90%;
+        margin: 0 auto;
+    }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  .about-container {
-    grid-template-columns: 1fr;
-  }
+    .hero-btns,
+    .hero-buttons {
+        justify-content: center;
+        gap: 15px;
+    }
 
-  .about-right {
-    text-align: left;
-    margin-top: 40px;
-  }
-}
-
-
-.about-image {
-    position: relative;
-}
-
-.about-image img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-}
-
-.about-content h2 {
-    margin-bottom: 1.5rem;
-}
-
-.about-content p {
-    margin-bottom: 1.5rem;
-    color: var(--gray);
-}
-
-.skills-container {
-    margin-top: 2rem;
-}
-
-.skill-category {
-    margin-bottom: 2rem;
-}
-
-.skill-category h3 {
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-    color: var(--secondary);
-}
-
-.skill-icons {
+    .social-links {
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.skill-icon {
-    display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 80px;
-    padding: 15px 10px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
+    gap: 15px;   /* spacing between icons */
+}
 }
 
-.skill-icon:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+
+/* About Page Section */
+    #about-page {
+      background: white;
+      padding: 50px 0;
+    }
+
+    /* Grid Layout for About Section */
+    .about-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Left + Right */
+      gap: 50px;
+      margin-top: 50px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 20px;
+    }
+
+    /* Left Column */
+    .about-left {
+      text-align: left;
+    }
+
+    /* Right Column */
+    .about-right {
+      text-align: center;
+    }
+
+    /* Skill Cards Container */
+    .skills-section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .skills-section p{
+        font-size: 25px;
+        font-weight: 40px;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+
+    /* Skill Group (Languages / Frameworks) */
+    .skill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    
+    /* Individual Skill Card */
+    .skill-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80px;
+      padding: 15px 10px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    /* Hover Effect for Skill Cards */
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Skill Icon */
+    .skill-card i,
+    .skill-card img {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+    /* ExpressJS & MongoDB Skill Cards */
+.skill-card img {
+  width: 32px;          /* consistent icon size */
+  height: 32px;
+  margin-bottom: 10px;
+  display: block;
+  object-fit: contain;   /* ensures image scales properly */
+  transition: transform 0.3s ease; /* smooth hover */
 }
 
-.skill-icon i {
-    font-size: 2rem;
-    margin-bottom: 10px;
+/* Hover effect on images */
+.skill-card:hover img {
+  transform: scale(1.2); /* slightly enlarge on hover */
 }
 
-.skill-icon span {
-    font-size: 0.8rem;
-    font-weight: 500;
-    text-align: center;
-}
 
-/* Colorful icons */
-.fa-python { color: #3776AB; }
-.fa-js-square { color: #F7DF1E; }
-.fa-html5 { color: #E34F26; }
-.fa-css3-alt { color: #1572B6; }
-.fa-database { color: #336791; }
-.fa-react { color: #61DAFB; }
-.fa-node-js { color: #339933; }
-.fa-git-alt { color: #F05032; }
-.fa-github { color: #181717; }
-.fa-npm { color: #CB3837; }
+    /* Skill Name */
+    .skill-card span {
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    /* Responsive for Mobile */
+    @media (max-width: 768px) {
+      .about-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .skill-group {
+        justify-content: flex-start;
+      }
+    }
 
 /* Projects Section */
-#projects {
-    background: #f8fafc;
-    margin-top: 30px;
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.section-header h2::after {
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 30px;
+/* Project card container */
+#projects-page {
+    margin-top: 50px; 
 }
 
 .project-card {
-    background: white;
+    margin-top: 30px;
+    background: #ffffff;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
     position: relative;
+    transition: transform .3s ease, box-shadow .3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
+/* Image container */
 .project-image {
-    height: 200px;
+    position: relative;
+    height: 260px;
     overflow: hidden;
 }
 
@@ -434,46 +484,104 @@ nav {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: var(--transition);
+    transition: transform .5s ease;
 }
 
 .project-card:hover .project-image img {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
-.project-content {
-    padding: 25px;
+/* Hover overlay */
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .4s ease, transform .4s ease;
 }
 
-.project-content h3 {
-    margin-bottom: 10px;
+/* Show overlay on hover */
+.project-card:hover .project-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Overlay title */
+.project-overlay h3 {
+    color: white;
     font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+/* Netflix-style red button */
+.overlay-btn {
+    background: #ffffff;
+    padding: 10px 18px;
+    border-radius: 50px;
+    color: #000000;
+    font-weight: 600;
+    text-decoration: none;
+    width: fit-content;
+    display: inline-block;
+    transition: background .3s ease;
+}
+
+.overlay-btn:hover {
+    background: #ffffff;
+}
+
+/* Bottom content */
+.project-content {
+    padding: 20px;
+    background: #fff;
 }
 
 .project-content p {
-    color: var(--gray);
-    margin-bottom: 20px;
-    font-size: 0.95rem;
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 15px;
 }
 
+/* Tech badges */
 .project-tech {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 20px;
 }
 
 .project-tech span {
     background: #e2e8f0;
-    padding: 5px 12px;
+    padding: 6px 12px;
     border-radius: 20px;
     font-size: 0.8rem;
-    font-weight: 500;
 }
 
-.project-links {
-    display: flex;
-    gap: 15px;
+/* Default (desktop/laptop) — cards side by side */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 25px;
+}
+
+/* Optional: for medium screens like tablets */
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    }
+}
+
+/* Mobile already set to 1 column */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }
 
 /* Contact Section */
@@ -483,6 +591,7 @@ nav {
 }
 
 .contact-container {
+    margin-top: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
@@ -644,6 +753,17 @@ nav {
     animation: typing 3.5s steps(40, end) forwards, hide-caret 0.1s 3.5s forwards;
 }
 
+@media (max-width: 768px) {
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
 /* Typing effect */
 @keyframes typing {
     from { width: 0; }
@@ -754,10 +874,6 @@ nav {
 }
 
 
-
-/* animation */
-/* Add these to your existing CSS file */
-
 /* Skills Animation */
 .skill-icons {
     display: flex;
@@ -795,106 +911,3 @@ nav {
     box-shadow: var(--shadow-lg);
 }
 
-/* Project Cards Animation */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 30px;
-}
-
-.project-card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    position: relative;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.8s ease forwards;
-}
-
-/* Stagger the animation for each project card */
-.project-card:nth-child(1) { animation-delay: 0.1s; }
-.project-card:nth-child(2) { animation-delay: 0.2s; }
-.project-card:nth-child(3) { animation-delay: 0.3s; }
-.project-card:nth-child(4) { animation-delay: 0.4s; }
-.project-card:nth-child(5) { animation-delay: 0.5s; }
-.project-card:nth-child(6) { animation-delay: 0.6s; }
-
-.project-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: var(--shadow-lg);
-}
-
-.project-image {
-    height: 200px;
-    overflow: hidden;
-}
-
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.project-card:hover .project-image img {
-    transform: scale(1.1);
-}
-
-/* Animation keyframes */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Add a subtle pulse animation to skill icons on hover */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-.skill-icon:hover i,
-.skill-icon:hover img {
-    animation: pulse 1s ease infinite;
-}
-
-/* Add a subtle glow effect to project cards on hover */
-.project-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 15px;
-    background: linear-gradient(45deg, transparent, rgba(37, 99, 235, 0.05), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: -1;
-}
-
-.project-card:hover::before {
-    opacity: 1;
-}
-
-/* Responsive adjustments for animations */
-@media (max-width: 768px) {
-    .skill-icon,
-    .project-card {
-        animation: fadeInUp 0.5s ease forwards;
-    }
-    
-    .skill-icon:nth-child(n),
-    .project-card:nth-child(n) {
-        animation-delay: 0.1s;
-    }
-}
