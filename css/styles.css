@@ -584,6 +584,40 @@ nav {
     }
 }
 
+/* Tablet (ipad) */
+@media (max-width: 1024px){
+    .projects-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* make overlay always visible on iPad */
+    .project-overlay{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .project-card:hover .project-image img{
+        transform: none;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px){
+    .projects-grid{
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* always show overlay on mobile */
+    .project-overlay{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .project-card:hover .project-image img{
+        transform: none;
+    }
+}
+
 /* Contact Section */
 #contact {
     background: white;
