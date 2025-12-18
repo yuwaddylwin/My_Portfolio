@@ -3,34 +3,50 @@ const projects = [
     {
         id: 1,
         title: "UniMarket",
-        description: "A full-stack web application for university students to list, browse, and purchase second-hand items. Built with ReactJS, NodeJS, Express, and MongoDB.",
-        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        description: "A Full-Stack WebApp for University Students to list, browse, and purchase second-hand items. With a real-time messaging, secure auth, and a user-friendly interface.",
+        image: "../assets/UniMarket.png",
         technologies: ["ReactJS", "NodeJS", "Express", "MongoDB", "JavaScript"],
         link: "https://github.com/yuwaddylwin/UniMarket"
     },
     {
         id: 2,
-        title: "Food Delivery System",
-        description: "A Python-based food delivery system using Binary Search Trees to manage orders efficiently, with built-in order processing and payment functionality.",
-        image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=781&q=80",
-        technologies: ["Python", "Data Structures", "BST"],
-        link: "https://github.com/yuwaddylwin"
+        title: "Movie Review Website",
+        description: "A Movie Review Website built to practice backend routing and data handling.",
+        image: "../assets/MovieReview.png",
+        technologies: ["JavaScript", "HTML", "CSS", "Express", "JSON"],
+        link: "https://github.com/yuwaddylwin/Movie-Review-Website"
     },
     {
         id: 3,
-        title: "Student Management System",
-        description: "A Python program that manages student records using CSV files with full CRUD operations. Focused on implementing core functionality and smooth program logic.",
-        image: "./assets/Python_project.png",
-        technologies: ["Python", "CSV", "File Handling"],
-        link: "https://github.com/yuwaddylwin"
+        title: "Brand-Sentiment Analyzer",
+        description: "A Sentiment Monitoring Project that processes social media comments, visualizes trends, and highlights potential reputation risks using Streamlit and VADER.",
+        image: "../assets/Sentiment.png",
+        technologies: ["Python", "Pandas", "Streamlit", "VADER"],
+        link: "https://github.com/yuwaddylwin/Brand-Sentiment-Monitor"
     },
     {
         id: 4,
         title: "Online Shopping Database",
-        description: "Designed a structured e-commerce database system with modules for customers, products, orders, and payments. Created entity relationships and optimized queries.",
-        image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        description: "Designed a structured E-commerce database system with modules for customers, products, orders, and payments. Created entity relationships and optimized queries.",
+        image: "../assets/E-commerce.png",
         technologies: ["SQL", "Microsoft Access", "Database Design"],
         link: "https://github.com/yuwaddylwin"
+    },
+    {
+        id: 5,
+        title: "Health Care System",
+        description: "A Web-based healthcare system designed to manage appointments and medical records, supporting different user roles and built with Express, EJS, and Java.",
+        image: "../assets/HCMS.png",
+        technologies: ["JavaScript", "Express", "EJS"],
+        link: "https://github.com/yuwaddylwin/HealthCare-System"
+    },
+    {
+        id: 6,
+        title: "Flash Card",
+        description: "A small flash card project built with React to practice components, state handling, and interactive UI behavior.",
+        image: "../assets/FlashCard.png",
+        technologies: ["JavaScript", "HTML", "CSS" ,"React"],
+        link: "https://github.com/yuwaddylwin/React-Practice-Flashcards"
     }
 ];
 
