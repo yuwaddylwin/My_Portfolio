@@ -13,24 +13,23 @@
     <header id="header">
         <div class="container">
             <nav>
-                <a href="#home" class="logo" data-page="home">YWL</a>
+                <a href="#home" class="logo">YWL</a>
                 <div class="menu-toggle" id="menu-toggle">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
                 <ul class="nav-links" id="nav-links">
-                    <li><a href="#home" data-page="home">Home</a></li>
-                    <li><a href="#about" data-page="about">About</a></li>
-                    <li><a href="#projects" data-page="projects">Projects</a></li>
-                    <li><a href="#contact" data-page="contact">Contact</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- Home Page -->
-<div id="home-page" class="page active">
     <section id="home">
         <div class="container">
             <div class="hero-content">
@@ -47,8 +46,8 @@
 
                 <!-- FIXED BUTTONS (REMOVED DUPLICATE ID) -->
                 <ul class="hero-buttons">
-                    <li><a href="#projects" class="btn" data-page="projects">View my Works</a></li>
-                    <li><a href="#contact" class="btn btn-outline" data-page="contact">Contact Me</a></li>
+                    <li><a href="#projects" class="btn">View my Works</a></li>
+                    <li><a href="#contact" class="btn btn-outline">Contact Me</a></li>
                 </ul>
 
             </div>
@@ -58,11 +57,8 @@
             </div>
         </div>
     </section>
-</div>
-
 
    <!-- About Page -->
-<div id="about-page" class="page active">
     <section id="about">
       <div class="about-container">
 
@@ -110,6 +106,10 @@
                 <i class="fab fa-react" style="color:#61DAFB;"></i>
                 <span>ReactJS</span>
               </div>
+               <div class="skill-card">
+                <img src="./assets/Tailwindcss.png" alt="Tailwind CSS">
+                <span>Tailwind CSS</span>
+              </div>
               <div class="skill-card">
                 <i class="fab fa-node-js" style="color:#339933;"></i>
                 <span>NodeJS</span>
@@ -144,10 +144,8 @@
 
       </div>
     </section>
-</div>
     <!-- Projects Page -->
-    <div id="projects-page" class="page">
-        <section id="projects">
+    <section id="projects">
             <div class="container">
                 <div class="section-header">
                     <h2>My Projects</h2>
@@ -158,11 +156,9 @@
                 </div>
             </div>
         </section>
-    </div>
 
     <!-- Contact Page -->
-    <div id="contact-page" class="page">
-        <section id="contact">
+    <section id="contact">
             <div class="container">
                 <div class="contact-container">
                     <div class="contact-info">
@@ -216,7 +212,6 @@
                 </div>
             </div>
         </section>
-    </div>
 
     <script src="js/navigation.js"></script>
     <script src="js/projects.js"></script>

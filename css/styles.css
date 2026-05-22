@@ -21,6 +21,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 90px;
 }
 
 body {
@@ -79,6 +80,7 @@ a {
 
 section {
     padding: 100px 0;
+    scroll-margin-top: 90px;
 }
 
 .hero-buttons {
@@ -341,8 +343,8 @@ nav {
 }
 
 
-/* About Page Section */
-    #about-page {
+/* About Section */
+    #about {
       background: white;
       padding: 50px 0;
     }
@@ -455,7 +457,7 @@ nav {
 
 /* Projects Section */
 /* Project card container */
-#projects-page {
+#projects {
     margin-top: 50px; 
 }
 
@@ -760,16 +762,6 @@ nav {
     background: rgba(239, 68, 68, 0.1);
     color: var(--error);
     border: 1px solid var(--error);
-    display: block;
-}
-
-/* Page Transitions */
-.page {
-    display: none;
-    animation: fadeIn 0.5s ease;
-}
-
-.page.active {
     display: block;
 }
 
