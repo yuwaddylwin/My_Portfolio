@@ -11,7 +11,7 @@ const projects = [
     {
         id: 2,
         title: "Bankly",
-        description: "a full-stack digital banking web application built to simulate modern mobile banking features with secure authentication, money transfers, QR payments, and transaction tracking.",       
+        description: "A Full-Stack digital banking WebApp built to simulate modern mobile banking features with secure authentication, money transfers, QR payments, and transaction tracking.",       
         image: "../assets/Bankly.png",
         technologies: ["ReactJS", "NodeJS", "Express", "MongoDB", "JavaScript", "Tailwind CSS"],
         link: "https://github.com/yuwaddylwin/Bankly"

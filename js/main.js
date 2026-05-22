@@ -1,6 +1,3 @@
-// Main initialization and utility functions
-
-// Add floating elements dynamically
 function createFloatingElements() {
     const floatingContainer = document.querySelector('.floating-elements');
     const colors = ['rgba(37, 99, 235, 0.1)', 'rgba(245, 158, 11, 0.1)', 'rgba(16, 185, 129, 0.1)'];
@@ -51,3 +48,39 @@ function smoothScrollTo(element) {
         top: element.offsetTop - 80
     });
 }
+
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+const hiddenElements = document.querySelectorAll(
+    'section, .project-card, .skill-card'
+);
+
+hiddenElements.forEach((el)=>{
+    el.classList.add('hidden');
+    observer.observe(el);
+});
+
+document.querySelectorAll('.project-card')
+.forEach(card=>{
+
+    card.addEventListener('mousemove',(e)=>{
+
+        const rect = card.getBoundingClientRect();
+
+        card.style.setProperty(
+            '--x',
+            `${e.clientX - rect.left}px`
+        );
+
+        card.style.setProperty(
+            '--y',
+            `${e.clientY - rect.top}px`
+        );
+    });
+});
