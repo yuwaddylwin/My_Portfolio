@@ -1048,6 +1048,10 @@ nav {
     transform: translateY(0);
 }
 
+.project-card{
+    position: relative;
+}
+
 .project-card::before{
     content: '';
     position: absolute;
@@ -1196,5 +1200,266 @@ nav {
     .nav-links a:hover {
         background: rgba(185,159,244,0.15);
         color: var(--primary);
+    }
+}
+
+/* =========================
+   OTHERS SECTION
+========================= */
+
+#others {
+    padding: 100px 0;
+    position: relative;
+}
+
+.others-block {
+    margin-top: 60px;
+}
+
+.others-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+.others-title i {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        #b99ff4,
+        #f091c1
+    );
+
+    color: white;
+    font-size: 1.1rem;
+
+    box-shadow:
+        0 10px 25px rgba(185,159,244,0.25);
+}
+
+.others-title h3 {
+    font-size: 1.7rem;
+}
+
+/* Grid */
+.others-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+/* Card */
+/* =========================
+   OTHER CARD
+========================= */
+
+.other-card {
+
+    background: rgba(255,255,255,0.7);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,0.4);
+
+    transition: 0.35s ease;
+
+    box-shadow:
+        0 10px 30px rgba(15,23,42,0.06);
+
+    padding: 22px;
+}
+
+/* Hover */
+.other-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 20px 40px rgba(185,159,244,0.16);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.other-image {
+
+    width: 100%;
+    height: 240px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background: #f8fafc;
+
+    margin-bottom: 22px;
+}
+
+/* Image */
+.other-image img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 18px;
+
+    transition: transform 0.35s ease;
+}
+
+/* Slight hover zoom */
+.other-card:hover .other-image img {
+    transform: scale(1.02);
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.other-content {
+    padding: 0;
+}
+
+.other-top h3 {
+    font-size: 1.9rem;
+    margin-bottom: 10px;
+    color: #1e293b;
+}
+
+.other-top span {
+    color: #64748b;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.other-content p {
+
+    margin-top: 24px;
+    margin-bottom: 28px;
+
+    line-height: 1.8;
+
+    color: #475569;
+    font-size: 1.05rem;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.card-btn {
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 22px;
+
+    border-radius: 999px;
+
+    background: linear-gradient(
+        135deg,
+        #b99ff4,
+        #f091c1
+    );
+
+    color: white;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.card-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .other-card {
+        padding: 18px;
+    }
+
+    .other-image {
+        height: 190px;
+    }
+
+    .other-top h3 {
+        font-size: 1.5rem;
+    }
+
+    .other-content p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .card-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+
+    .others-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    #others {
+        padding: 80px 0;
+    }
+
+    .others-title {
+        justify-content: center;
+    }
+
+    .others-title h3 {
+        font-size: 1.4rem;
+    }
+
+    .other-image {
+        height: 200px;
+    }
+
+    .other-content {
+        padding: 20px;
+    }
+
+    .card-btn {
+        width: 100%;
+        justify-content: center;
     }
 }
