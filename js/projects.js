@@ -38,7 +38,7 @@ const projects = [
         description: "Designed a structured E-commerce database system with modules for customers, products, orders, and payments. Created entity relationships and optimized queries.",
         image: "../assets/E-commerce.png",
         technologies: ["SQL", "Microsoft Access", "Database Design"],
-        link: "https://github.com/yuwaddylwin"
+        link: "https://github.com/yuwaddylwin/Online-Shopping-DB"
     },
     {
         id: 6,
