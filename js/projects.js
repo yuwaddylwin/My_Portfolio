@@ -50,14 +50,78 @@ const projects = [
     }
 ];
 
-// Render Projects
+const experiences = [
+    {
+        company: "Fuzik Connex Co., Ltd.",
+        position: "Full Stack Developer Intern",
+        period: "June 2026 – Present (4 months)",
+        website: "https://www.fuzik.co",
+        logo: "../assets/F_logo.png",
+        description:
+            "Working on a music collaboration platform, contributing to both frontend and backend features while learning modern full-stack development in an agile environment.",
+        technologies: [
+            "Vue.js",
+            "Nuxt 4",
+            "Tailwind CSS",
+            "Django",
+            "PHP",
+            "SQLite",
+            "Supabase",
+            "YouTube API",
+            "Git"
+        ]
+    }
+];
+
+const experiencesGrid = document.getElementById('experience-grid');
 const projectsGrid = document.getElementById('projects-grid');
 
-projects.forEach(project => {
-    const projectCard = document.createElement('div');
-    projectCard.className = 'project-card';
-    
-    projectCard.innerHTML = `
+function getExperienceUrl(url) {
+    if (!url) return '#';
+    const trimmedUrl = url.trim();
+    return /^https?:\/\//i.test(trimmedUrl) ? trimmedUrl : `https://${trimmedUrl}`;
+}
+
+function renderExperienceCards(container, items) {
+    if (!container) return;
+
+    items.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'project-card experience-card';
+        const experienceUrl = getExperienceUrl(item.website);
+
+        card.innerHTML = `
+            <div class="project-image experience-image">
+                ${item.logo ? `<img src="${item.logo}" alt="${item.company}" class="experience-logo">` : `<div class="experience-badge">${item.company.split(' ').map(word => word[0]).slice(0, 2).join('').toUpperCase()}</div>`}
+            </div>
+            <div class="project-content experience-content">
+                <div class="experience-header">
+                    <div>
+                        <p class="experience-period">${item.period}</p>
+                        <h3 class="experience-company"><a href="${experienceUrl}" target="_blank" rel="noopener noreferrer">${item.company}</a></h3>
+                        <h4 class="experience-position">${item.position}</h4>
+                    </div>
+                    <a href="${experienceUrl}" target="_blank" rel="noopener noreferrer" class="experience-link">Visit Website</a>
+                </div>
+                <p class="experience-description">${item.description}</p>
+                <div class="project-tech">
+                    ${item.technologies.map(tech => `<span>${tech}</span>`).join('')}
+                </div>
+            </div>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+function renderProjectCards(container, items) {
+    if (!container) return;
+
+    items.forEach(project => {
+        const projectCard = document.createElement('div');
+        projectCard.className = 'project-card';
+
+        projectCard.innerHTML = `
             <div class="project-image">
                 <img src="${project.image}" alt="${project.title}">
                 <div class="project-overlay">
@@ -72,7 +136,11 @@ projects.forEach(project => {
                 </div>
             </div>
         `;
-        
-        projectsGrid.appendChild(projectCard); // append inside the loop
+
+        container.appendChild(projectCard);
     });
+}
+
+renderExperienceCards(experiencesGrid, experiences);
+renderProjectCards(projectsGrid, projects);
 
