@@ -8,7 +8,7 @@ const certificates = [
         date: "2025",
         description:
             "Completed a comprehensive course covering responsive layouts, Flexbox, CSS Grid, and modern web design principles.",
-        src: "../assets/Responsive Web Certificate.png",
+        src: "./assets/Responsive Web Certificate.png",
         link: "https://www.freecodecamp.org/certification/Yu_Waddy_Lwin/responsive-web-design"
     },
 
@@ -18,7 +18,7 @@ const certificates = [
         date: "2023",
         description:
             "Learned Python fundamentals including problem-solving, data structures, loops, functions, and programming concepts.",
-        src: "../assets/My python certificate 2-1.png",
+        src: "./assets/My python certificate 2-1.png",
         link: "https://www.coursera.org/account/accomplishments/verify/P4QR5QVMGH8M"
     }
 ];
@@ -31,7 +31,7 @@ const events = [
         title: "Agoda Open House 2025",
         organizer: "Agoda",
         date: "Nov 2025",
-        src: "../assets/Agoda.jpg",
+        src: "./assets/Agoda.jpg",
         description:
             "Attended a tech sharing session featuring engineers and professionals discussing software engineering, career growth, and industry trends.",
         link: "https://www.linkedin.com/posts/yuwaddylwin_agoda-internshipfair-openhouse-ugcPost-7392602092034527232-VL7J/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAF0W0zcBYgZLv3GKti5jmF3By9n0mvFIlsE"
@@ -48,12 +48,12 @@ function renderCertificates() {
 
     certificates.forEach(cert => {
 
-        const card = document.createElement("div");
+        const card = document.createElement("article");
         card.className = "other-card";
 
         card.innerHTML = `
             <div class="other-image">
-                <img src="${cert.src}" alt="${cert.title}">
+                <img src="${cert.src}" alt="${cert.title}" loading="lazy">
             </div>
 
             <div class="other-content">
@@ -70,6 +70,8 @@ function renderCertificates() {
 
                 <a href="${cert.link}"
                    target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="View ${cert.title} certificate in a new tab"
                    class="card-btn">
 
                     <i class="fas fa-arrow-up-right-from-square"></i>
@@ -92,12 +94,12 @@ function renderEvents() {
 
     events.forEach(event => {
 
-        const card = document.createElement("div");
+        const card = document.createElement("article");
         card.className = "other-card";
 
         card.innerHTML = `
             <div class="other-image">
-                <img src="${event.src}" alt="${event.title}">
+                <img src="${event.src}" alt="${event.title}" loading="lazy">
             </div>
 
             <div class="other-content">
@@ -114,6 +116,8 @@ function renderEvents() {
 
                 <a href="${event.link}"
                    target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Read more about ${event.title} in a new tab"
                    class="card-btn">
 
                     <i class="fas fa-arrow-up-right-from-square"></i>

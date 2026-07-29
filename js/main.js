@@ -1,86 +1,103 @@
-function createFloatingElements() {
-    const floatingContainer = document.querySelector('.floating-elements');
-    const colors = ['rgba(37, 99, 235, 0.1)', 'rgba(245, 158, 11, 0.1)', 'rgba(16, 185, 129, 0.1)'];
-    
-    for (let i = 0; i < 8; i++) {
-        const element = document.createElement('div');
-        element.classList.add('floating-element');
-        
-        const size = Math.random() * 100 + 50;
-        const color = colors[Math.floor(Math.random() * colors.length)];
-        
-        element.style.width = `${size}px`;
-        element.style.height = `${size}px`;
-        element.style.background = color;
-        element.style.top = `${Math.random() * 100}%`;
-        element.style.left = `${Math.random() * 100}%`;
-        element.style.animationDuration = `${Math.random() * 20 + 10}s`;
-        
-        floatingContainer.appendChild(element);
+function initializeRevealAnimations() {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    if (prefersReducedMotion.matches || !("IntersectionObserver" in window)) {
+        return;
+    }
+
+    const revealGroups = [
+        {
+            selector: ".section-header, .about-left, .about-right, .others-title, .contact-info, .contact-form",
+            variant: "reveal--default",
+            stagger: 0,
+            cycle: 1
+        },
+        {
+            selector: ".skill-group",
+            children: ".skill-card",
+            variant: "reveal--skill",
+            stagger: 55,
+            cycle: 8
+        },
+        {
+            selector: ".projects-grid",
+            children: ".project-card",
+            variant: "reveal--project",
+            stagger: 90,
+            cycle: 3
+        },
+        {
+            selector: "#certificate-list",
+            children: ".other-card",
+            variant: "reveal--certificate",
+            stagger: 90,
+            cycle: 3
+        },
+        {
+            selector: "#event-list",
+            children: ".other-card",
+            variant: "reveal--event",
+            stagger: 90,
+            cycle: 3
+        }
+    ];
+
+    const revealElements = [];
+
+    revealGroups.forEach(group => {
+        if (group.children) {
+            document.querySelectorAll(group.selector).forEach(container => {
+                container.querySelectorAll(group.children).forEach((element, index) => {
+                    prepareReveal(element, group, index);
+                    revealElements.push(element);
+                });
+            });
+            return;
+        }
+
+        document.querySelectorAll(group.selector).forEach((element, index) => {
+            prepareReveal(element, group, index);
+            revealElements.push(element);
+        });
+    });
+
+    const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+
+            const element = entry.target;
+            const delay = Number.parseInt(element.style.getPropertyValue("--reveal-delay"), 10) || 0;
+
+            element.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+
+            // Remove entry-only styles after the reveal so 250ms hover transitions
+            // are not forced to inherit the slower entrance timing.
+            window.setTimeout(() => {
+                element.classList.remove(
+                    "reveal",
+                    "reveal--default",
+                    "reveal--skill",
+                    "reveal--project",
+                    "reveal--certificate",
+                    "reveal--event",
+                    "is-visible"
+                );
+                element.style.removeProperty("--reveal-delay");
+            }, 620 + delay);
+        });
+    }, {
+        rootMargin: "0px 0px -7% 0px",
+        threshold: 0.1
+    });
+
+    revealElements.forEach(element => revealObserver.observe(element));
+
+    function prepareReveal(element, group, index) {
+        const staggerIndex = index % group.cycle;
+        element.classList.add("reveal", group.variant);
+        element.style.setProperty("--reveal-delay", `${staggerIndex * group.stagger}ms`);
     }
 }
 
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    const skillIcons = document.querySelectorAll('.skill-icon');
-    
-    skillIcons.forEach(icon => {
-        // Add mouseenter event
-        icon.addEventListener('mouseenter', function() {
-            console.log('Hover detected on:', this);
-            this.style.border = '3px solid green !important';
-            this.style.background = 'lightgreen !important';
-        });
-        
-        // Add mouseleave event
-        icon.addEventListener('mouseleave', function() {
-            console.log('Hover ended on:', this);
-            this.style.border = '1px solid blue !important';
-            this.style.background = 'white !important';
-        });
-    });
-});
-
-// Utility function for smooth scrolling
-function smoothScrollTo(element) {
-    window.scrollTo({
-        behavior: 'smooth',
-        top: element.offsetTop - 80
-    });
-}
-
-const observer = new IntersectionObserver((entries)=>{
-    entries.forEach((entry)=>{
-        if(entry.isIntersecting){
-            entry.target.classList.add('show');
-        }
-    });
-});
-
-const hiddenElements = document.querySelectorAll(
-    'section, .project-card, .skill-card'
-);
-
-hiddenElements.forEach((el)=>{
-    el.classList.add('hidden');
-    observer.observe(el);
-});
-
-document.querySelectorAll('.project-card')
-.forEach(card=>{
-
-    card.addEventListener('mousemove',(e)=>{
-
-        const rect = card.getBoundingClientRect();
-
-        card.style.setProperty(
-            '--x',
-            `${e.clientX - rect.left}px`
-        );
-
-        card.style.setProperty(
-            '--y',
-            `${e.clientY - rect.top}px`
-        );
-    });
-});
+document.addEventListener("DOMContentLoaded", initializeRevealAnimations);

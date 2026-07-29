@@ -3,63 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yu Waddy Lwin is a full-stack developer building thoughtful, reliable web applications.">
     <title>Yu Waddy Lwin - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    
 </head>
 <body>
-    <div class="background-blobs">
-    <div class="blob blob1"></div>
-    <div class="blob blob2"></div>
-    <div class="blob blob3"></div>
-</div>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <!-- Header -->
     <header id="header">
         <div class="container">
-            <nav>
-                <a href="#home" class="logo">YWL</a>
-                <div class="menu-toggle" id="menu-toggle">
+            <nav aria-label="Primary navigation">
+                <a href="#home" class="logo" aria-label="Yu Waddy Lwin — home">YWL<span aria-hidden="true">.</span></a>
+                <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="nav-links" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
                 <ul class="nav-links" id="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Experience</a></li>
-                     <li><a href="#others">Others</a></li>
+                    <li><a href="#my-projects">Projects</a></li>
+                    <li><a href="#others">Others</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <main id="main-content">
     <!-- Home Page -->
     <section id="home">
         <div class="container">
             <div class="hero-content">
-                <h1 class="typewriter">Hi! I'm Yu Waddy</h1>
-                <p>FULL-STACK DEVELOPER</p>
-                <p>I'm building modern web applications while continuously learning and improving.</p>
+                <p class="eyebrow">Full-Stack Developer · Bangkok, Thailand</p>
+                <h1>Hi, I'm Yu Waddy.<br><span>Software Engineer</span></h1>
+                <p class="hero-description">I have hands-on full-stack development experience, with a passion for building modern web applications, solving real-world problems, and continuously learning and improving.</p>
 
                 <!-- FIXED SOCIAL LINKS -->
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/yu-waddy-lwin-133052377/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/yuwaddylwin" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.instagram.com/yuwaddy_lwin?igsh=eXdtb3ByYTBnY3lw&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+                <div class="social-links" aria-label="Social profiles">
+                    <a href="https://linkedin.com/in/yu-waddy-lwin-133052377/" target="_blank" rel="noopener noreferrer" aria-label="Visit Yu Waddy's LinkedIn profile"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="https://github.com/yuwaddylwin" target="_blank" rel="noopener noreferrer" aria-label="Visit Yu Waddy's GitHub profile"><i class="fab fa-github" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/yuwaddy_lwin?igsh=eXdtb3ByYTBnY3lw&amp;utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Visit Yu Waddy's Instagram profile"><i class="fab fa-instagram" aria-hidden="true"></i></a>
                 </div>
 
                 <!-- FIXED BUTTONS (REMOVED DUPLICATE ID) -->
                 <ul class="hero-buttons">
-                    <li><a href="#projects" class="btn">View my Works</a></li>
+                    <li><a href="#projects" class="btn">View my work <i class="fas fa-arrow-down" aria-hidden="true"></i></a></li>
                     <li><a href="#contact" class="btn btn-outline">Contact Me</a></li>
                 </ul>
 
             </div>
 
             <div class="hero-image">
-                <img src="./assets/MYPIC.jpg" alt="Yu Waddy Lwin">
+                <div class="portrait-frame">
+                    <img src="./assets/MYPIC.jpg" alt="Yu Waddy Lwin" width="350" height="467">
+                    <span class="availability"><span aria-hidden="true"></span> Open to opportunities</span>
+                </div>
             </div>
         </div>
     </section>
@@ -71,9 +74,11 @@
         <!-- Left Column: About Me -->
         <div class="about-left">
           <h2>About Me</h2>
-          <p>I’m a 21-year-old senior Computer Science student at Rangsit University, with a strong interest in Full-Stack Web Development.</p>
-          <p>Maintained a GPA of 3.6/4.0 while building a solid foundation through coursework in data structures, web development, OOP, database systems, machine learning, and data analysis.</p>
-          <p>I enjoy working on real-world projects, writing clean and maintainable code, and learning how to build reliable solutions that can add value to teams and users.</p>
+          <div class="about-copy">
+            <p>I’m a 21-year-old senior Computer Science student at Rangsit University, with a strong interest in Full-Stack Web Development.</p>
+            <p>Maintained a GPA of 3.6/4.0 while building a solid foundation through coursework in data structures, web development, OOP, database systems, machine learning, and data analysis.</p>
+            <p>I enjoy working on real-world projects, writing clean and maintainable code, and learning how to build reliable solutions that can add value to teams and users.</p>
+          </div>
         </div>
 
         <!-- Right Column: Technical Skills -->
@@ -106,7 +111,7 @@
             </div>
 
             <!-- Frameworks & Tools -->
-            <p>Frameworks & Tools</p>
+            <p>Frameworks &amp; Tools</p>
             <div class="skill-group">
               <div class="skill-card">
                 <i class="fab fa-react" style="color:#61DAFB;"></i>
@@ -177,7 +182,7 @@
                     <!-- Experience cards will be dynamically added here -->
                 </div>
 
-                <div class="section-header">
+                <div class="section-header" id="my-projects">
                     <h2>My Projects</h2>
                     <p>Here are some of the projects I've worked on</p>
                 </div>
@@ -227,25 +232,25 @@
                         <h2>Get In Touch</h2>
                         <p>I'm always open to discussing new opportunities, creative ideas, or ways to collaborate. Feel free to reach out!</p>
                         
-                        <div class="contact-details">
+                        <address class="contact-details">
                             <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>(+66) 817-374-337</span>
+                                <i class="fas fa-phone" aria-hidden="true"></i>
+                                <a href="tel:+66817374337">(+66) 817-374-337</a>
                             </div>
                             <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>yuwaddylwin.2004@gmail.com</span>
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                                <a href="mailto:yuwaddylwin.2004@gmail.com">yuwaddylwin.2004@gmail.com</a>
                             </div>
                             <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                                 <span>Bangkok, Thailand</span>
                             </div>
-                        </div>
+                        </address>
                         
-                        <div class="social-links">
-                            <a href="https://linkedin.com/in/yu-waddy-lwin-133052377/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://github.com/yuwaddylwin" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://www.instagram.com/yuwaddy_lwin?igsh=eXdtb3ByYTBnY3lw&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <div class="social-links" aria-label="Social profiles">
+                            <a href="https://linkedin.com/in/yu-waddy-lwin-133052377/" target="_blank" rel="noopener noreferrer" aria-label="Visit Yu Waddy's LinkedIn profile"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                            <a href="https://github.com/yuwaddylwin" target="_blank" rel="noopener noreferrer" aria-label="Visit Yu Waddy's GitHub profile"><i class="fab fa-github" aria-hidden="true"></i></a>
+                            <a href="https://www.instagram.com/yuwaddy_lwin?igsh=eXdtb3ByYTBnY3lw&amp;utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Visit Yu Waddy's Instagram profile"><i class="fab fa-instagram" aria-hidden="true"></i></a>
                         </div>
                     </div>
                     
@@ -269,11 +274,19 @@
                             </div>
                             <button type="submit" class="btn">Send Message</button>
                         </form>
-                        <div id="form-message" class="form-message"></div>
+                        <div id="form-message" class="form-message" role="status" aria-live="polite"></div>
                     </div>
                 </div>
             </div>
         </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>YWL.</p>
+            <a href="#home">Back to top <i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+        </div>
+    </footer>
 
     <script src="js/navigation.js"></script>
     <script src="js/projects.js"></script>

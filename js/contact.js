@@ -48,10 +48,12 @@ contactForm.addEventListener('submit', async function(e) {
 function showFormMessage(message, type) {
     formMessage.textContent = message;
     formMessage.className = `form-message ${type}`;
+    formMessage.style.display = '';
     
     // Hide message after 5 seconds
     setTimeout(() => {
-        formMessage.style.display = 'none';
+        formMessage.className = 'form-message';
+        formMessage.textContent = '';
     }, 5000);
 }
 
