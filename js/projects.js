@@ -57,7 +57,7 @@ const experiences = [
         company: "Fuzik Connex Co., Ltd.",
         position: "Full Stack Developer Intern",
         period: "June 2026 – Present (4 months)",
-        website: "https://www.fuzik.co",
+        website: "https://fuzikapp.com",
         logo: "./assets/F_logo.png",
         description:
             "Working on a music collaboration platform, contributing to both frontend and backend features while learning modern full-stack development in an agile environment.",
@@ -72,6 +72,16 @@ const experiences = [
             "YouTube API",
             "Git"
         ]
+    },
+    {
+        company: "GED Pathways Myanmar",
+        position: "Frontend Freelance Developer",
+        website: "https://ged-pathways-myanmar.vercel.app",
+        logo: "./assets/GED_Pathways.png",
+        lightLogoBackground: true,
+        description:
+            "Developed a responsive student learning platform with a focus on intuitive UI/UX and seamless navigation across desktop and mobile devices. Deployed the production-ready learning platform to Vercel and initiated backend development to support future platform functionality.",
+        technologies: ["React", "Tailwind CSS", "Node.js", "Express"]
     }
 ];
 
@@ -93,13 +103,13 @@ function renderExperienceCards(container, items) {
         const experienceUrl = getExperienceUrl(item.website);
 
         card.innerHTML = `
-            <div class="project-image experience-image">
+            <div class="project-image experience-image${item.lightLogoBackground ? ' experience-image-light' : ''}">
                 ${item.logo ? `<img src="${item.logo}" alt="${item.company} logo" class="experience-logo" loading="lazy">` : `<div class="experience-badge">${item.company.split(' ').map(word => word[0]).slice(0, 2).join('').toUpperCase()}</div>`}
             </div>
             <div class="project-content experience-content">
                 <div class="experience-header">
                     <div>
-                        <p class="experience-period">${item.period}</p>
+                        ${item.period ? `<p class="experience-period">${item.period}</p>` : ''}
                         <h3 class="experience-company"><a href="${experienceUrl}" target="_blank" rel="noopener noreferrer">${item.company}</a></h3>
                         <h4 class="experience-position">${item.position}</h4>
                     </div>

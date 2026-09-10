@@ -742,6 +742,15 @@ nav {
     overflow: hidden;
 }
 
+.experience-card .experience-image-light {
+    background: #fff;
+}
+
+.experience-image-light .experience-logo {
+    height: auto;
+    transform: none !important;
+}
+
 .experience-logo {
     width: 100%;
     height: 100%;
