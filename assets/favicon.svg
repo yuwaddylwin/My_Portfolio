@@ -1,4 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="15" fill="#315c55"/>
-  <path d="M16 17h10l7 12 7-12h9L37 37v11h-9V37L16 17Z" fill="#fff"/>
+  <title>Yu — code and spark</title>
+  <defs>
+    <linearGradient id="navy" x2="1" y2="1">
+      <stop stop-color="#294a70"/>
+      <stop offset="1" stop-color="#101e34"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="url(#navy)"/>
+  <path d="m21 22-11 10 11 10m22-20 11 10-11 10" fill="none" stroke="#f4f7ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m33 16 3.5 11.5L44 32l-7.5 4.5L33 48l-3.5-11.5L22 32l7.5-4.5Z" fill="#a9caff"/>
 </svg>

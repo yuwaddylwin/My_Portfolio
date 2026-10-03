@@ -5,7 +5,7 @@ const projects = [
         title: "UniMarket",
         description: "A Full-Stack WebApp for University Students to list, browse, and purchase second-hand items. With a real-time messaging, secure auth, and a user-friendly interface.",
         image: "./assets/UniMarket.png",
-        technologies: ["ReactJS", "NodeJS", "Express", "MongoDB", "JavaScript"],
+        technologies: ["ReactJS", "NodeJS", "Express", "MongoDB", "JavaScript", "REST APIs", "Socket.io", "JWT", "Bcrypt"],
         link: "https://github.com/yuwaddylwin/UniMarket",
         liveLink: "https://unimarket-web.onrender.com"
     },
